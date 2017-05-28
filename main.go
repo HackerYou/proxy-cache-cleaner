@@ -44,7 +44,7 @@ func main() {
 		if err != nil {
 			fmt.Println(err.Error())
 		}
-		since := time.Since(t).Minutes()
+		since := time.Since(t).Hours()
 
 		if since > 1.0 {
 			go func() {
