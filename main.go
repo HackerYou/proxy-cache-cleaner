@@ -47,7 +47,7 @@ func main() {
 				fmt.Println(err.Error())
 			}
 			since := time.Since(t).Hours()
-			
+
 			if since > 1.0 {
 				itemsToDelete <- "deleting"
 				err := collection.RemoveId(singleItem.ID)
@@ -63,5 +63,5 @@ func main() {
 		cleanCount = cleanCount + 1
 	}
 
-	fmt.Printf("%d items removed from cache", cleanCount)
+	fmt.Printf("%d items removed from cache %s \n", cleanCount, time.Now().Format("Jan 2 15:04:05"))
 }
